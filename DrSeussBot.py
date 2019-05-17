@@ -11,11 +11,10 @@ chatbot = ChatBot("DrSeussBot",
         output_adapter='chatterbot.output.TerminalAdapter',
         trainer='chatterbot.trainers.ChatterBotCorpusTrainer',
         logic_adapters=[
-                'chatterbot.logic.BestMatch',
                 {
-                      'import_path':  'chatterbot.logic.LowConfidenceAdapter',
-                      'threshold':  0.9,
-                      'default_response':  'Fox in Socks!'
+                        'import_path': 'chatterbot.logic.BestMatch',
+                        'default_response': 'Fox in Socks!',
+                        'maximum_similarity_threshold': 0.90
                  }],
         filters=['chatterbot.filters.RepetitiveResponseFilter']
         )
